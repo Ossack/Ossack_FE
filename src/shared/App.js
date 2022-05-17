@@ -52,9 +52,10 @@ function App() {
                 <Route path="/main" exact component={Main} />
                 <Route path="/search" exact component={SearchPage} />
                 <Route path="/map" exact component={SaleMap} />
+                <Route path="/map/:mapname" exact component={SaleMap} />
                 <Route path="/mypage" exact component={MyPage} />
                 <Route path="/like" exact component={Like} />
-                <Route path="/map/office" exact component={MapOfficeList} />
+                <Route path="/search/office" exact component={MapOfficeList} />
                 <Route
                   path="/detail/:estateId"
                   exact

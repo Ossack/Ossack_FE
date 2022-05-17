@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { actionCreators as mapActions } from "../../redux/modules/map";
 //아이콘
 import { TiPlus, TiMinus } from "react-icons/ti";
@@ -16,6 +17,7 @@ import { Position, Overlay } from "./index";
 
 const MainMap = (props) => {
   const dispatch = useDispatch();
+  const name = useParams().mapname;
   const getOffice = useSelector((state) => state.map.office_list);
   const is_loaded = useSelector((state) => state.map.is_loaded);
   //console.log(is_loaded)
@@ -101,7 +103,9 @@ const MainMap = (props) => {
                       >
                         <div
                           onClick={() =>
-                            history.push(`/map/office?query=${position.title}`)
+                            history.push(
+                              `/search/office?query=${position.title}`
+                            )
                           }
                         >
                           <Overlay
